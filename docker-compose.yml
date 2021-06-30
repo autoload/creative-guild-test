@@ -1,0 +1,64 @@
+version: '3'
+networks:
+  creative-guild:
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: creative-guild-nginx
+    ports:
+      - "8030:8030"
+      - "8080:8080"
+    volumes:
+      - ./front-end:/var/www/front-end
+      - ./back-end:/var/www/back-end
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - redis
+      - mysql
+    networks:
+      - creative-guild
+  redis:
+    image: redis
+    container_name: creative-guild-redis
+    restart: unless-stopped
+    ports:
+      - 6389:6389
+    networks:
+      - creative-guild
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf:rw
+      - ./redis/data:/data:rw
+    command:
+      /bin/bash -c "redis-server /usr/local/etc/redis/redis.conf"
+  mysql:
+    image: mysql:5.7.22
+    container_name: creative-guild-mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: homestead
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - creative-guild
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: creative-guild-php
+    volumes:
+      - ./back-end:/var/www/back-end
+    ports:
+      - "9001:9000"
+    networks:
+      - creative-guild

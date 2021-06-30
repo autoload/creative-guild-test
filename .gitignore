@@ -1,0 +1,5 @@
+/mysql/*
+/nginx/*
+!/nginx/default.conf
+/redis/*
+!/redis/redis.conf
