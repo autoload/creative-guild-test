@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\ArtistImage;
+use App\Models\ArtistUser;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -27,7 +28,8 @@ class ArtistImageController extends AdminController
         $grid = new Grid(new ArtistImage());
 
         $grid->column('id', __('Id'));
-        $grid->column('artist_id', __('Artist id'));
+        $grid->column('artist_id', __('ArtistName'))->display(function($artist_id) {
+            return ArtistUser::find($artist_id)->name;});
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
         $grid->column('img', __('Img'));
@@ -72,13 +74,17 @@ class ArtistImageController extends AdminController
     protected function form()
     {
         $form = new Form(new ArtistImage());
-
         $form->number('artist_id', __('Artist id'));
         $form->text('title', __('Title'));
         $form->text('description', __('Description'));
         $form->image('img', __('Img'));
         $form->date('date', __('Date'))->default(date('Y-m-d'));
-        $form->text('featured', __('Featured'))->default('false');
+        $states = [
+            'on'  => ['value' => 'true', 'text' => 'true', 'color' => 'success'],
+            'off' => ['value' => 'false', 'text' => 'false', 'color' => 'danger'],
+        ];
+
+        $form->switch('featured', __('Featured'))->states($states);
 
         return $form;
     }

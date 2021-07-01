@@ -27,11 +27,11 @@ class ArtistUserController extends AdminController
         $grid = new Grid(new ArtistUser());
 
         $grid->column('id', __('Id'));
+        $grid->column('name', __('Name'));
         $grid->column('phone', __('Phone'));
         $grid->column('email', __('Email'));
         $grid->column('bio', __('Bio'));
         $grid->column('profile_picture', __('Profile picture'));
-        $grid->column('release_at', __('Release at'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -49,6 +49,7 @@ class ArtistUserController extends AdminController
         $show = new Show(ArtistUser::findOrFail($id));
 
         $show->field('id', __('Id'));
+        $show->field('name', __('Name'));
         $show->field('phone', __('Phone'));
         $show->field('email', __('Email'));
         $show->field('bio', __('Bio'));
@@ -68,7 +69,7 @@ class ArtistUserController extends AdminController
     protected function form()
     {
         $form = new Form(new ArtistUser());
-
+        $form->text('name', __('Name'));
         $form->text('phone', __('Phone'));
         $form->email('email', __('Email'));
         $form->text('bio', __('Bio'));
