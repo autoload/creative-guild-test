@@ -4,8 +4,5 @@
 /redis/*
 !/redis/redis.conf
 /.idea
-<<<<<<< HEAD
 /.vscode
-=======
-/.vscode
->>>>>>> 0efbcfad6e28e041a5b6afab7c6d551f9a80546d
+
