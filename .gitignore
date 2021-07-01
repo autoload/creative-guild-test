@@ -3,6 +3,6 @@
 !/nginx/default.conf
 /redis/*
 !/redis/redis.conf
-/.idea
-/.vscode
+.idea
+.vscode
 
