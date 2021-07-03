@@ -1,8 +1,34 @@
 <template>
-    <h3>Home</h3>
-    <span>{{ artistData.name }}</span>
-    <div :key="album.id" v-for="album in artistData.album">
-        <span>{{ album.id }} {{ album.title }}</span>
+    <div class="text-center">
+        <div class="artist">
+            <img v-bind:src="artistData.profile_picture" class="artist-pic" v-bind:alt="artistData.name" />
+            <div class="artist-info">
+                <h1>{{ artistData.name }}</h1>
+                <h4>Bio</h4>
+                {{ artistData.bio }}
+            </div>
+            <div class="artist-contact">
+                <h4>Phone</h4>
+                {{ artistData.phone }}
+                <h4>Email</h4>
+                {{ artistData.email }}
+            </div>
+        </div>
+
+        <div class="album">
+            <div class="album-item" :key="album.id" v-for="album in artistData.album">
+                <div class="album-item-img" v-bind:style=" 'background:url('+ album.img +') no-repeat center; background-size: 130%' ">
+                    <h3>{{ album.title }}</h3>
+                </div>
+                <div class="album-item-text">
+                    {{ album.description }}
+                </div>
+                <div class="album-item-bottom">
+                    <i class="fa fa-heart fa-lg" style="color:red"></i>
+                    <span style="float:right">{{ album.date }}</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <router-link to="/about">Go About</router-link>
@@ -31,3 +57,80 @@ export default {
     
 }
 </script>
+
+<style scoped>
+    .artist{
+        margin: auto;
+        width: 950px;
+        background: #ccc;
+        overflow: hidden;
+        padding: 30px 50px;
+        border-radius: 10px;
+        margin-top: 30px;
+        text-align: left;
+    }
+    .artist-pic{
+        float: left;
+        width: 180px;
+        border-radius: 50%;
+
+    }
+    .artist-info{
+        float: left;
+        width: 530px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .artist-contact{
+        float: left;
+        width: 200px;
+        margin-top: 80px;
+    }
+    .album{
+        margin: auto;
+        width: 1050px;
+        overflow: hidden;
+        margin-top: 20px;
+        text-align: left;
+    }
+    .album-item{
+        width: 320px;
+        overflow: hidden;
+        padding: 15px;
+        float: left;
+
+    }
+    .album-item-img{
+        width: 320px;
+        height: 200px;
+        font-weight: bold;
+        color: #fff;
+        font-size: 22px;
+        display: table-cell;
+        vertical-align: bottom;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .album-item-img h3{
+        padding-left: 30px;
+    }
+    .album-item-text{
+        width: 290px;
+        height: 60px;
+        background: #fff;
+        padding: 15px;
+
+    }
+    .album-item-bottom {
+        width: 290px;
+        height: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: #fff;
+    }
+    .album-item-bottom span {
+        float: right;
+    }
+</style>
