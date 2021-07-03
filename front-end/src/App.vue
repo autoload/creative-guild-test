@@ -29,12 +29,17 @@ export default {
   padding: 0;
 }
 body {
+  background: #eee;
   margin: 0;
   padding: 0;
 }
 div {
   margin: 0;
   padding: 0;
+}
+h1 {
+  padding: 0;
+  margin: 10px 0;
 }
 h4 {
   padding: 0;

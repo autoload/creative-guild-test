@@ -8,7 +8,7 @@ services:
     container_name: creative-guild-nginx
     ports:
       - "8030:8030"
-      - "8080:8080"
+      - "8040:8040"
     volumes:
       - ./front-end:/var/www/front-end
       - ./back-end:/var/www/back-end

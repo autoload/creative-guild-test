@@ -63,7 +63,9 @@ h4 {
     border-top-right-radius: 10px;
 }
 .album-item-img h3{
-    padding-left: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom:0px;
 }
 .album-item-text{
     width: 290px;

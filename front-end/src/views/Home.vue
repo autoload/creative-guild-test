@@ -24,7 +24,7 @@
                     {{ album.description }}
                 </div>
                 <div class="album-item-bottom">
-                    <i class="fa fa-heart fa-lg" style="color:red"></i>
+                    <i v-if="album.featured == 'true'" class="fa fa-heart fa-lg" style="color:red"></i>
                     <span style="float:right">{{ album.date }}</span>
                 </div>
             </div>
@@ -61,7 +61,7 @@ export default {
 <style scoped>
     .artist{
         margin: auto;
-        width: 950px;
+        width: 980px;
         background: #ccc;
         overflow: hidden;
         padding: 30px 50px;
@@ -77,31 +77,31 @@ export default {
     }
     .artist-info{
         float: left;
-        width: 530px;
+        width: 580px;
         padding-left: 20px;
         padding-right: 20px;
     }
     .artist-contact{
         float: left;
-        width: 200px;
-        margin-top: 80px;
+        width: 180px;
+        margin-top: 65px;
     }
     .album{
         margin: auto;
-        width: 1050px;
+        width: 1080px;
         overflow: hidden;
         margin-top: 20px;
         text-align: left;
     }
     .album-item{
-        width: 320px;
+        width: 340px;
         overflow: hidden;
-        padding: 15px;
+        padding: 10px;
         float: left;
 
     }
     .album-item-img{
-        width: 320px;
+        width: 340px;
         height: 200px;
         font-weight: bold;
         color: #fff;
@@ -112,17 +112,18 @@ export default {
         border-top-right-radius: 10px;
     }
     .album-item-img h3{
-        padding-left: 30px;
+        padding-left: 20px;
+        margin-bottom:10px;
     }
     .album-item-text{
-        width: 290px;
+        width: 320px;
         height: 60px;
         background: #fff;
-        padding: 15px;
+        padding: 10px;
 
     }
     .album-item-bottom {
-        width: 290px;
+        width: 310px;
         height: 30px;
         padding-left: 15px;
         padding-right: 15px;

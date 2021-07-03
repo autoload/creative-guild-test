@@ -84,7 +84,7 @@ class ArtistImageController extends AdminController
             'off' => ['value' => 'false', 'text' => 'false', 'color' => 'danger'],
         ];
 
-        $form->switch('featured', __('Featured'))->states($states);
+        $form->switch('featured', __('Featured'))->states($states)->default('false');
 
         return $form;
     }
