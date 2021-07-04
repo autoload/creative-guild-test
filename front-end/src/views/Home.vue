@@ -30,8 +30,6 @@
             </div>
         </div>
     </div>
-
-    <router-link to="/about">Go About</router-link>
 </template>
 
 <script>
@@ -59,79 +57,134 @@ export default {
 </script>
 
 <style scoped>
-    .artist{
-        margin: auto;
-        width: 980px;
-        background: #ccc;
-        overflow: hidden;
-        padding: 30px 50px;
-        border-radius: 10px;
-        margin-top: 30px;
-        text-align: left;
-    }
-    .artist-pic{
-        float: left;
-        width: 180px;
-        border-radius: 50%;
+/* artist start */
+.artist {
+    margin: auto;
+    max-width: 1010px;
+    overflow: hidden;
+    padding: 30px 50px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: left;
+    background-color:#343a40;
+    color:#fff;
+    opacity:0.8;
+}
+.artist:hover {
+    animation:animation-artist 2s;
+    opacity:1;
+}
 
-    }
-    .artist-info{
-        float: left;
-        width: 580px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .artist-contact{
-        float: left;
-        width: 180px;
-        margin-top: 65px;
-    }
-    .album{
-        margin: auto;
-        width: 1080px;
+@keyframes animation-artist {
+    from {opacity:0.8;}
+    to {opacity:1;}
+}
+
+.artist-pic {
+    float: left;
+    min-width: 180px;
+    border-radius: 50%;
+}
+
+.artist-info {
+    float: left;
+    min-width: 180px;
+    max-width: 580px;
+    padding-left: 20px;
+}
+
+.artist-contact {
+    float: left;
+    min-width: 180px;
+    margin-top: 65px;
+    padding-left:20px;
+}
+
+/* artist end */
+
+/* album start */
+.album {
+    margin: auto;
+    max-width: 1080px;
+    overflow: hidden;
+    margin-top: 20px;
+    text-align: left;
+}
+
+@media screen and (max-width: 736px) {
+    .album-item {
+        width: 340px;
         overflow: hidden;
-        margin-top: 20px;
-        text-align: left;
+        margin: auto;
+        padding: 10px;
     }
-    .album-item{
+}
+@media screen and (min-width: 735px) {
+    .album-item {
         width: 340px;
         overflow: hidden;
         padding: 10px;
         float: left;
+    }
+}
 
-    }
-    .album-item-img{
-        width: 340px;
-        height: 200px;
-        font-weight: bold;
-        color: #fff;
-        font-size: 22px;
-        display: table-cell;
-        vertical-align: bottom;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    .album-item-img h3{
-        padding-left: 20px;
-        margin-bottom:10px;
-    }
-    .album-item-text{
-        width: 320px;
-        height: 60px;
-        background: #fff;
-        padding: 10px;
 
-    }
-    .album-item-bottom {
-        width: 310px;
-        height: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        background: #fff;
-    }
-    .album-item-bottom span {
-        float: right;
-    }
+.album-item-img {
+    width: 340px;
+    height: 200px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 22px;
+    display: table-cell;
+    vertical-align: bottom;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    opacity:0.8;
+}
+
+.album-item-img:hover {
+    animation:animation-artist-img 1s;
+    opacity:1;
+    vertical-align: center;
+}
+    
+@keyframes animation-artist-img {
+    from {opacity:0.8;}
+    to {opacity:1;}
+}
+
+.album-item-img h3 {
+    padding-left: 20px;
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.album-item-text {
+    width: 318px;
+    height: 60px;
+    background: #fff;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    opacity:0.8;
+}
+
+.album-item-bottom {
+    width: 308px;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    opacity:0.8;
+}
+
+.album-item-bottom span {
+    float: right;
+}
+/* album end */
 </style>

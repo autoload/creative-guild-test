@@ -1,8 +1,10 @@
 <template>
   
-  <Header  msg="Header"/>
+  <Header/>
+  <div class="container">
   <router-view></router-view>
-  <Footer  msg="Footer"/>
+  </div>
+  <Footer  msg="Copyright © 2021 David Wan"/>
 </template>
 
 <script>
@@ -19,30 +21,57 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 0;
-  padding: 0;
-}
 body {
-  background: #eee;
-  margin: 0;
-  padding: 0;
+    background: #eee;
+    background:url('assets/cloud.jpg');
+    background-attachment:fixed;
+    margin: 0;
+    padding: 0;
 }
+
+#app {
+    font-family: Arial, Avenir, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
 div {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 h1 {
-  padding: 0;
-  margin: 10px 0;
+    padding: 0;
+    margin: 10px 0;
 }
+
 h4 {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: #007bff;
+}
+
+ul,
+li {
+    padding:0;margin:0;list-style:none
+}
+
+.container{
+    min-height:800px;
 }
 </style>
