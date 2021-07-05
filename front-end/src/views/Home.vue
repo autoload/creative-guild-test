@@ -42,9 +42,9 @@ export default {
     },
     methods: { 
         async fetchArtist() {
-          const res = await fetch('http://localhost:8030/api/artist/1')
+          const res = await fetch('http://davidwan.tech:8030/api/artist/1')
           const data = await res.json()
-          console.log(data);
+          //console.log(data);
           return data;
         },
         

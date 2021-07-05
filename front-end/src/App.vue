@@ -25,6 +25,7 @@ body {
     background: #eee;
     background:url('assets/cloud.jpg');
     background-attachment:fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
