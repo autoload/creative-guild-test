@@ -9,7 +9,7 @@ This is a simple demonstration, Use Docker Compose to build LNMP development env
 
 
 ## Project Introduction
-DEMO, a photographic artist gallery display system with separated front-end and back-end
+DEMO, a photographic artist gallery display system with separated front-end and back-end.
 
 
 ## Demand Analysis
@@ -19,23 +19,23 @@ DEMO, a photographic artist gallery display system with separated front-end and 
 
 
 ## Technology Selection
-- The back-end framework specifies Laravel.
-- Separate the front end, consider fetching data, rendering data, and data binding to decide to use Vue.
-- The cloud server chooses AWS ES2, the Ubuntu system.
-- Select Nginx for WEB server. The front and back ends are separated, with high concurrency.
-- Data needs to be stored. Use MySQL database.
-- Cache alternate configuration, choose Redis.
-- Deploy and build tools, choose Docker, Docker compose. Container technology is quickly built.
-- Version control tool, choose Git.
+- The back-end framework specifies Laravel
+- Separate the front end, consider fetching data, rendering data, and data binding to decide to use Vue
+- The cloud server chooses AWS ES2, the Ubuntu system
+- Select Nginx for WEB server. The front and back ends are separated, with high concurrency
+- Data needs to be stored. Use MySQL database
+- Cache alternate configuration, choose Redis
+- Deploy and build tools, choose Docker, Docker compose. Container technology is quickly built
+- Version control tool, choose Git
 
 
 ## Development Process
 1. Development environment setup
 2. Database design
-3. Establish a corresponding background to facilitate the management of debugging data. (Not required)
-4. Back-end development, creating RESTful API.
-5. Front-end page style construction.
-6. The front end calls the rendering page asynchronously.
+3. Establish a corresponding background to facilitate the management of debugging data (Not required)
+4. Back-end development, creating RESTful API
+5. Front-end page style construction
+6. The front end calls the rendering page asynchronously
 7. Project deployment
 
 
@@ -123,8 +123,8 @@ Tip: In real development, the background security address path needs to be modif
 
 
 #### RESTful API creation
-Create model users images to associate related tables
-Create a controller ArtistUserController to implement related data operations
+Create model users images to associate related tables.
+Create a controller ArtistUserController to implement related data operations.
 Tip: The method of reading the artist's personal information and associated works is encapsulated in the ArtistUser Model. The data needs to be retaken, and it is judged whether the data can be retrieved and the value passed is correct.
 
 Add routing to realize the CURD function.
@@ -197,7 +197,7 @@ docker-compose exec php php /var/www/back-end/artisan make:test BasicTest
 Location: /front-end/html_test
 #### Vue integration
 
-* New Home view for display the artist's pic 
+* New Home view for display the artist's pic
 * Create the component of the footer and header
 * Register routing
 * Interface to retrieve data asynchronously
